@@ -1,25 +1,30 @@
 package uwu.misaka.stepbystepmindustry.tile;
 
+import uwu.misaka.stepbystepmindustry.Vars;
 import uwu.misaka.stepbystepmindustry.content.Blocks;
 import uwu.misaka.stepbystepmindustry.content.Floors;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Tile {
     int x;
     int y;
-    Block block;
-    Floor floor;
-    GroundUnitCell gCell=new GroundUnitCell();
-    AirUnitCell aCell=new AirUnitCell();
-    public Tile(int x,int y, Block block,Floor floor){
+    public Block block;
+    public Floor floor;
+    public Tile target;
+    GroundUnitCell gCell = new GroundUnitCell();
+    AirUnitCell aCell = new AirUnitCell();
+
+    public Tile(int x, int y, Block block, Floor floor) {
         this.x = x;
         this.y = y;
         this.block = block;
         this.floor = floor;
     }
-    public Tile(int x,int y,Floor floor){
-        this.x=x;
+
+    public Tile(int x, int y, Floor floor) {
+        this.x = x;
         this.y=y;
         this.block= Blocks.air;
         this.floor=floor;
@@ -33,8 +38,13 @@ public class Tile {
 
     public BufferedImage draw() {
         BufferedImage output = new BufferedImage(32, 32, BufferedImage.TYPE_INT_ARGB);
-        output.getGraphics().drawImage(floor.image, 0, 0, null);
-        output.getGraphics().drawImage(block.image, 0, 0, null);
+        Graphics g = output.getGraphics();
+        g.drawImage(floor.image, 0, 0, null);
+        g.drawImage(block.image, 0, 0, null);
+        if (inBounds(Vars.mouseX, Vars.mouseY)) {
+            g.setColor(Vars.selectedTile);
+            g.fillRect(0, 0, 32, 32);
+        }
         return output;
     }
 
@@ -44,5 +54,9 @@ public class Tile {
 
     public void setFloor(Floor floor) {
         this.floor = floor;
+    }
+
+    public boolean inBounds(int bx, int by) {
+        return bx < x * 32 + 32 && x * 32 < bx && by > y * 32 && y * 32 + 32 > by;
     }
 }

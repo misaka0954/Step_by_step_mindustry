@@ -4,8 +4,11 @@ import uwu.misaka.stepbystepmindustry.Vars;
 import uwu.misaka.stepbystepmindustry.tile.Block;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Blocks {
+    public static ArrayList<Block> blocks = new ArrayList<>();
+
     public static Block air;
     public static Block core;
     public static Block tesla;

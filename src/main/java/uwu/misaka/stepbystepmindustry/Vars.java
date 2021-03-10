@@ -7,6 +7,8 @@ import uwu.misaka.stepbystepmindustry.screen.Screen;
 import uwu.misaka.stepbystepmindustry.screen.Window;
 import uwu.misaka.stepbystepmindustry.screen.windowHandler.LoadingBar;
 import uwu.misaka.stepbystepmindustry.sourceclasses.WindowEntity;
+import uwu.misaka.stepbystepmindustry.tile.Block;
+import uwu.misaka.stepbystepmindustry.tile.Tile;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -25,6 +27,8 @@ public class Vars {
     public static Screen screenContainer;
     public static Graphics sg;
     public static WindowEntity windowHandler;
+
+    public static final Color selectedTile = new Color(255, 0, 0, 150);
 
     public static Image icon;
 
@@ -67,5 +71,9 @@ public class Vars {
         new Blocks();
         new Floors();
         world = new World();
+    }
+
+    public boolean canPlace(Tile t, Block b) {
+        return (!t.block.isAir || t.floor.space);
     }
 }

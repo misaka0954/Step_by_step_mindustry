@@ -1,17 +1,20 @@
 package uwu.misaka.stepbystepmindustry.tile;
 
+import uwu.misaka.stepbystepmindustry.content.Blocks;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Block {
-    Image image;
-    boolean isWall = false;
-    boolean isAir = false;
-    boolean isTurret = false;
-    boolean isDrill = false;
-    boolean isConveyor = false;
-    boolean isCore = false;
-    int rotation = 0;
+    public Image image;
+    public boolean isWall = false;
+    public boolean isAir = false;
+    public boolean isTurret = false;
+    public boolean isDrill = false;
+    public boolean isConveyor = false;
+    public boolean isCore = false;
+    public int rotation = 0;
+
     public Block(boolean w, boolean a, boolean t, boolean d, boolean c, boolean core, int rotation, Image image) {
         this.isWall = w;
         this.isAir = a;
@@ -21,11 +24,14 @@ public class Block {
         this.isCore = core;
         this.rotation = rotation;
         this.image = image;
+
+        Blocks.blocks.add(this);
     }
 
     public Block() {
         this.isAir=true;
-        this.image=new BufferedImage(1,1,BufferedImage.TYPE_INT_ARGB);
+        this.image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
+        Blocks.blocks.add(this);
     }
     public Image getImage() {
         return image;
