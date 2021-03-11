@@ -3,6 +3,7 @@ package uwu.misaka.stepbystepmindustry.tile;
 import uwu.misaka.stepbystepmindustry.Vars;
 import uwu.misaka.stepbystepmindustry.content.Blocks;
 import uwu.misaka.stepbystepmindustry.content.Floors;
+import uwu.misaka.stepbystepmindustry.screen.windowHandler.Level;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -41,6 +42,10 @@ public class Tile {
         Graphics g = output.getGraphics();
         g.drawImage(floor.image, 0, 0, null);
         g.drawImage(block.image, 0, 0, null);
+        if (Level.target != null && Level.target.x == this.x && Level.target.y == this.y) {
+            g.setColor(Vars.selectedTile);
+            g.drawRect(0, 0, 31, 31);
+        }
         if (inBounds(Vars.mouseX, Vars.mouseY)) {
             g.setColor(Vars.selectedTile);
             g.fillRect(0, 0, 32, 32);
