@@ -13,11 +13,14 @@ public class Block {
     public boolean isDrill = false;
     public boolean isConveyor = false;
     public boolean isCore = false;
+    public boolean requestWater = false;
+    public boolean requestSlug = false;
+    public boolean requestTar = false;
     public int rotation = 0;
+    public boolean requestPower = false;
 
     public Block(boolean w, boolean a, boolean t, boolean d, boolean c, boolean core, int rotation, Image image) {
         this.isWall = w;
-        this.isAir = a;
         this.isTurret = t;
         this.isDrill = d;
         this.isConveyor = c;

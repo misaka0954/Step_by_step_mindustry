@@ -73,7 +73,10 @@ public class Vars {
         world = new World();
     }
 
-    public boolean canPlace(Tile t, Block b) {
-        return (!t.block.isAir || t.floor.space);
+    public static boolean canPlace(Tile t, Block b) {
+        if(!t.block.isAir || t.floor.space){return false;}
+        if(t.floor.slug != b.requestSlug||t.floor.tar!=b.requestTar||t.floor.water!=b.requestWater){ return false; }
+        if(b.requestPower=true&&t.floor.energy==0f){return false;}
+        return true;
     }
 }
