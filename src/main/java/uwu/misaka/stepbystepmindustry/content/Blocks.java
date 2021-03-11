@@ -10,12 +10,20 @@ public class Blocks {
     public static ArrayList<Block> blocks = new ArrayList<>();
 
     public static Block air;
+
     public static Block core;
+
     public static Block tesla;
     public static Block noiser;
     public static Block minigun;
     public static Block gun;
     public static Block astro;
+
+    public static Block copperWall;
+
+    public static Block drill;
+
+    public static Block conveyor;
 
 
     public Blocks() throws IOException {
@@ -26,5 +34,10 @@ public class Blocks {
         minigun = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/minigun.png"));
         gun = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/gun.png"));
         astro = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/astro.png"));
+        copperWall = new Block(true, false, false, false, false, false, 0, Vars.getImage("blocks/walls/copper-wall.png"));
+        drill = new Block(false, false, false, false, false, false, 0, Vars.getImage("blocks/production/drill.png"));
+        conveyor = new Block(false, false, false, false, true, false, 0, Vars.getImage("blocks/production/conveyor.png"));
+
+
     }
 }
