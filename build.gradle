@@ -16,3 +16,4 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+task dist(type: Jar) { manifest { attributes 'Main-Class': "uwu.misaka.stepbystepmindustry.Ichi" } from { configurations.compileClasspath.collect { it.isDirectory() ? it : it.name.endsWith("pom") ? it : zipTree(it) } } from files(sourceSets.main.output) }

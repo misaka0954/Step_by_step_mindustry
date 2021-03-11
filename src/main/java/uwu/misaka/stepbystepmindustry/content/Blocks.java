@@ -36,7 +36,7 @@ public class Blocks {
         astro = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/astro.png"));
         copperWall = new Block(true, false, false, false, false, false, 0, Vars.getImage("blocks/walls/copper-wall.png"));
         drill = new Block(false, false, false, false, false, false, 0, Vars.getImage("blocks/production/drill.png"));
-        conveyor = new Block(false, false, false, false, true, false, 0, Vars.getImage("blocks/production/conveyor.png"));
+        conveyor = new Block(false, false, false, false, true, false, 0, Vars.getImage("blocks/production/conveyor-1.png"));
 
 
     }
