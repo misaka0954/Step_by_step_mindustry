@@ -1,6 +1,6 @@
 package uwu.misaka.stepbystepmindustry.content;
 
-import uwu.misaka.stepbystepmindustry.tile.Floor;
+import uwu.misaka.stepbystepmindustry.baseClasses.tile.Floor;
 
 import javax.imageio.ImageIO;
 import java.io.IOException;

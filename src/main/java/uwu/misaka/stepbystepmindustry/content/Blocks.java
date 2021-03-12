@@ -1,7 +1,7 @@
 package uwu.misaka.stepbystepmindustry.content;
 
-import uwu.misaka.stepbystepmindustry.Vars;
-import uwu.misaka.stepbystepmindustry.tile.Block;
+import uwu.misaka.stepbystepmindustry.baseClasses.tile.Block;
+import uwu.misaka.stepbystepmindustry.baseClasses.tile.blockType.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,16 +28,14 @@ public class Blocks {
 
     public Blocks() throws IOException {
         air = new Block();
-        core = new Block(false, false, false, false, false, true, 0, Vars.getImage("blocks/cores/core.png"));
-        tesla = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/tesla.png"));
-        noiser = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/noiser.png"));
-        minigun = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/minigun.png"));
-        gun = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/gun.png"));
-        astro = new Block(false, false, true, false, false, false, 0, Vars.getImage("blocks/turrets/astro.png"));
-        copperWall = new Block(true, false, false, false, false, false, 0, Vars.getImage("blocks/walls/copper-wall.png"));
-        drill = new Block(false, false, false, false, false, false, 0, Vars.getImage("blocks/production/drill.png"));
-        conveyor = new Block(false, false, false, false, true, false, 0, Vars.getImage("blocks/production/conveyor-1.png"));
-
-
+        core = new Core("blocks/cores/core.png");
+        tesla = new Turret("blocks/turrets/tesla.png");
+        noiser = new Turret("blocks/turrets/noiser.png");
+        minigun = new Turret("blocks/turrets/minigun.png");
+        gun = new Turret("blocks/turrets/gun.png");
+        astro = new Turret("blocks/turrets/astro.png");
+        copperWall = new Wall("blocks/walls/copper-wall.png");
+        drill = new Drill("blocks/production/drill.png");
+        conveyor = new Conveyor("blocks/production/conveyor-1.png", 4);
     }
 }

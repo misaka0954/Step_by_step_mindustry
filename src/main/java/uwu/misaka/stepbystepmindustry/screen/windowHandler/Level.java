@@ -1,9 +1,9 @@
 package uwu.misaka.stepbystepmindustry.screen.windowHandler;
 
 import uwu.misaka.stepbystepmindustry.Vars;
+import uwu.misaka.stepbystepmindustry.baseClasses.tile.Tile;
 import uwu.misaka.stepbystepmindustry.elements.GamePanel;
 import uwu.misaka.stepbystepmindustry.sourceclasses.WindowEntity;
-import uwu.misaka.stepbystepmindustry.tile.Tile;
 
 import static uwu.misaka.stepbystepmindustry.Vars.sg;
 

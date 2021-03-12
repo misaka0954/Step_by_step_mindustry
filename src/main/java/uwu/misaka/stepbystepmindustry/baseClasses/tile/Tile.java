@@ -1,4 +1,4 @@
-package uwu.misaka.stepbystepmindustry.tile;
+package uwu.misaka.stepbystepmindustry.baseClasses.tile;
 
 import uwu.misaka.stepbystepmindustry.Vars;
 import uwu.misaka.stepbystepmindustry.content.Blocks;

@@ -1,4 +1,4 @@
-package uwu.misaka.stepbystepmindustry.tile;
+package uwu.misaka.stepbystepmindustry.baseClasses.tile;
 
 import java.awt.*;
 

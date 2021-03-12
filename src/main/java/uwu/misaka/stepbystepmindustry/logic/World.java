@@ -1,6 +1,6 @@
 package uwu.misaka.stepbystepmindustry.logic;
 
-import uwu.misaka.stepbystepmindustry.tile.Tile;
+import uwu.misaka.stepbystepmindustry.baseClasses.tile.Tile;
 
 import java.awt.image.BufferedImage;
 

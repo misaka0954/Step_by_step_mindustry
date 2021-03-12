@@ -1,9 +1,10 @@
 package uwu.misaka.stepbystepmindustry.elements;
 
 import uwu.misaka.stepbystepmindustry.Vars;
+import uwu.misaka.stepbystepmindustry.baseClasses.tile.Block;
+import uwu.misaka.stepbystepmindustry.baseClasses.tile.Tile;
+import uwu.misaka.stepbystepmindustry.baseClasses.tile.blockType.blockType;
 import uwu.misaka.stepbystepmindustry.content.Blocks;
-import uwu.misaka.stepbystepmindustry.tile.Block;
-import uwu.misaka.stepbystepmindustry.tile.Tile;
 
 import java.util.ArrayList;
 
@@ -16,14 +17,18 @@ public class GamePanel {
         int x = 32;
         int y = 550;
         for (Block b : Blocks.blocks) {
-            if (Vars.canPlace(t, b) && !b.isAir) {
-                imageButtons.add(new ImageButton(b.image, x, y, () -> {
-                    t.setBlock(b);
+            if (Vars.canPlace(t, b) && b.type != blockType.air) {
+                imageButtons.add(new ImageButton(t.block.image, x, y, () -> {
+                    try {
+                        t.setBlock(b.get());
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
                 }));
                 x += 40;
             }
         }
-        if (!t.block.isAir) {
+        if (t.block.type != blockType.air) {
             buttons.add(new Button("Destroy", x, y, 100, 32, () -> t.setBlock(Blocks.air)));
         }
         this.t = t;
@@ -55,15 +60,25 @@ public class GamePanel {
         int x = 32;
         int y = 550;
         for (Block b : Blocks.blocks) {
-            if (Vars.canPlace(t, b) && !b.isAir) {
+            if (Vars.canPlace(t, b) && b.type != blockType.air) {
                 imageButtons.add(new ImageButton(b.image, x, y, () -> {
-                    t.setBlock(b);
+                    try {
+                        t.setBlock(b.get());
+                    } catch (CloneNotSupportedException e) {
+                        e.printStackTrace();
+                    }
                 }));
                 x += 40;
             }
         }
-        if (!t.block.isAir) {
-            buttons.add(new Button("Destroy", x, y, 100, 32, () -> t.setBlock(Blocks.air)));
+        if (t.block.type != blockType.air) {
+            buttons.add(new Button("Destroy", x, y, 100, 32, () -> {
+                try {
+                    t.setBlock(Blocks.air.get());
+                } catch (CloneNotSupportedException e) {
+                    e.printStackTrace();
+                }
+            }));
         }
     }
 }
